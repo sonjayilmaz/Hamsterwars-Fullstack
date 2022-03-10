@@ -12,6 +12,7 @@
 /build
 
 # misc
+hamsterwarsKey.json
 .DS_Store
 .env.local
 .env.development.local
