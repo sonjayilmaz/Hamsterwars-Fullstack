@@ -1,0 +1,21 @@
+nav a {
+	padding: 0.2em 2em;
+	transition: background-color 0.3s linear;
+	text-decoration: none;
+	font-size: 1em;
+	color: white;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+	background-color: #504257;
+	border-radius: 1em;
+  }
+
+  header {
+    text-align: center;
+	background-color:#2A003E;
+	color: #03a0cb;
+	padding:  0.5em;
+	flex: 0 0 auto;
+  }
