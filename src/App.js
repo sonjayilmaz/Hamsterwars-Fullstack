@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Start from './views/start/Start';
 import Battle from './views/battle/Battle';
 import Gallery from './views/gallery/Gallery';
+import './App.css';
 
 
 
@@ -19,13 +20,19 @@ function App() {
           </header>
         
         <main>
-
+        <div className='backgroundImg'>
+      <div className='inner'>
+     
            <Routes>
     <Route path='/' element={<Start/>}/>
     <Route path='/battle' element={<Battle/>}/>
     <Route path='/gallery' element={<Gallery/>}/>
     </Routes>
+    </div>
+
+    </div>
         </main>
+         
     </div>
     </Router>
     </>
