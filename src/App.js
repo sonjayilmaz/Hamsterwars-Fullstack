@@ -20,7 +20,7 @@ function App() {
           </header>
         
         <main>
-        <div className='backgroundImg'>
+        <div className='main-container'>
       <div className='inner'>
      
            <Routes>

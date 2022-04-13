@@ -17,11 +17,15 @@ Om det av någon anledning inte går att nå backend-servern
 så ska du visa ett användarvänligt felmeddelande här. 
 Användaren ska också få möjligheten att försöka igen.
      */}
-     <button className='battleButton'>
+     <div className='battle-link-container'>
      <Link to='/battle' className='battleLink'>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
             Start the battle
           </Link>
-     </button>
+          </div>
      </div>
     );
   }

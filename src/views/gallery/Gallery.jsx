@@ -1,22 +1,41 @@
 import './Gallery.css'
-
+import { useState, useEffect} from 'react';
+import { Base } from '../../Base.tsx';
+import HamsterCard from './HamsterCard.jsx';
 function Gallery() {
-    return (
-        <div>
-          <h1 className='gallery-h1'>Gallery</h1>
-          {/*
-Här ska appen visa alla hamstrars namn och bild, i ett CSS grid.
 
-Man ska kunna ta bort en hamster från galleriet.
+  const [list, setList] = useState([]);
 
-Man ska kunna lägga till en ny hamster via ett formulär. 
-Formuläret ska använda validering.
 
-Tänk på att inte visa för mycket information direkt. 
-Låt användaren klicka/hovra över en bild för att visa mer information.
-          */}
+  
+   // Did finish loading
+   useEffect(()=>{
+     console.clear();
+
+     fetch('http://localhost:1337/hamsters', {
+      method: 'GET',
+      //body: formData
+      })
+      .then(response => response.json())
+      .then(result => {
+        setList(result);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+     
+   }, []);
+
+   return (
+    <div className='gallery-container'>
+       {
+       list.map(hamster => 
+        <HamsterCard hamster={hamster} /> 
+      )}
      </div>
-    );
+   );
+
   }
   
   export default Gallery;
