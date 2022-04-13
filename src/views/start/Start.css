@@ -8,3 +8,29 @@ h2{
     text-align: center;
 }
 
+.battleButton {
+  cursor: pointer;
+  background: #39ff14;
+  border-radius: 1rem;
+  padding: 0.85rem 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  width: 20%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.battleLink:hover, .battleButton:hover{
+    color: #ffffff;
+    transform: scale(1.5);
+}
+
+.battleLink{
+  text-decoration: none;
+  display: block;
+  color: #000000;
+  transition: 0.5s all ease-in-out;
+}

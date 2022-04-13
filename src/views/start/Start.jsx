@@ -1,4 +1,5 @@
 import './Start.css'
+import {Link} from 'react-router-dom'
 
 function Start() {
     return (
@@ -16,6 +17,11 @@ Om det av någon anledning inte går att nå backend-servern
 så ska du visa ett användarvänligt felmeddelande här. 
 Användaren ska också få möjligheten att försöka igen.
      */}
+     <button className='battleButton'>
+     <Link to='/battle' className='battleLink'>
+            Start the battle
+          </Link>
+     </button>
      </div>
     );
   }
