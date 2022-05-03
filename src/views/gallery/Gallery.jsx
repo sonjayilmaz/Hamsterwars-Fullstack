@@ -1,37 +1,26 @@
 import './Gallery.css'
 import { useState, useEffect} from 'react';
-import { Base } from '../../Base.tsx';
 import HamsterCard from './HamsterCard.jsx';
-function Gallery() {
-
-  const [list, setList] = useState([]);
+import Api from '../../Api.js';
 
 
-  
-   // Did finish loading
-   useEffect(()=>{
-     console.clear();
+ function Gallery() {
 
-     fetch('http://localhost:1337/hamsters', {
-      method: 'GET',
-      //body: formData
-      })
-      .then(response => response.json())
-      .then(result => {
-        setList(result);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+  const [hamsterList, sethamsterList] = useState([]);
 
-     
-   }, []);
+  useEffect(() => {
+
+    if(hamsterList.length > 0)
+    return;
+
+    Api.getAllHamsters().then(data => sethamsterList(data));
+  });
 
    return (
     <div className='gallery-container'>
        {
-       list.map(hamster => 
-        <HamsterCard hamster={hamster} /> 
+       hamsterList.map(hamster => 
+        <HamsterCard battleMode={false} key={hamster.id} hamster={hamster} />
       )}
      </div>
    );

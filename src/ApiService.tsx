@@ -1,4 +1,4 @@
-export abstract class Base {         
+export abstract class ApiService {         
     
     public static Time(flux: Number = 0): Number {
       return Math.trunc((Date.now() / 1000) + flux.valueOf());
