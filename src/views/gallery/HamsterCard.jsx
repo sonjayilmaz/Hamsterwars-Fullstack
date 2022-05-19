@@ -11,8 +11,6 @@ async function Delete(id) {
     }
 
     
-
-
 function HamsterCard(props){
 
     const [hamster, sethamster] = useState([]);
@@ -21,7 +19,6 @@ function HamsterCard(props){
   
    sethamster(props.hamster);
     });
-
 
 
 
@@ -43,9 +40,10 @@ return (
                  Favorite food {hamster.favFood} 
                  </p>
             </div>
-            
-            {props.battleMode ? "" : <button onClick={async () => await Delete(props.hamster.id)}>Delete</button>}
-
+            <div>
+            {props.battleMode ? "" : <button className='hamster-delete-button' onClick={async () =>
+                 await Delete(props.hamster.id)}>Delete ❌</button>}
+             </div>
         </div>
     </div>
     </div>

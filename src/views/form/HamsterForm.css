@@ -1,0 +1,10 @@
+.form-h1{
+    color: whitesmoke;
+    text-align: center;
+}
+
+.form-link-container{
+    display: flex;
+    justify-content: center;
+    }
+    

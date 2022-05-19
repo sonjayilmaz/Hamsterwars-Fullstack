@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Start from './views/start/Start';
 import Battle from './views/battle/Battle';
 import Gallery from './views/gallery/Gallery';
+import HamsterForm from './views/form/HamsterForm';
 import './App.css';
 
 
@@ -27,6 +28,7 @@ function App() {
     <Route path='/' element={<Start/>}/>
     <Route path='/battle' element={<Battle/>}/>
     <Route path='/gallery' element={<Gallery/>}/>
+    <Route path='/form' element={<HamsterForm/>}/>
     </Routes>
     </div>
 

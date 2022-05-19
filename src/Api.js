@@ -1,5 +1,5 @@
 const config = {
-    api: 'http://localhost:1337',
+    api: 'http://localhost:1337',// proxy. ändra detta då det kan påverka deloy med heroku
     options: {
         headers: { 'content-type': 'application/json' },
     },
@@ -31,6 +31,23 @@ const getHamster = (id) => {
             throw Error(error);
         });
 };
+
+
+
+const postHamster = (data) => {
+    return fetch(`${config.api}/hamsters/`, {
+            method: 'POST',
+            body: data ? JSON.stringify(data) : null,
+            ...config.options,
+        })
+        .then((response) => handleResponse(response))
+        .then((response) => response)
+        .catch((error) => {
+            console.error(error);
+            throw Error(error);
+        });
+};
+
 
 const updateHamster = (id, data) => {
     return fetch(`${config.api}/${id}`, {
@@ -81,4 +98,4 @@ const handleResponse = (response) => {
     }
 };
 
-export default { getAllHamsters, getHamster, updateHamster, deleteHamster, getRandomHamster };
+export default { getAllHamsters, getHamster, postHamster, updateHamster, deleteHamster, getRandomHamster };
