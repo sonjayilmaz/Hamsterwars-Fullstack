@@ -64,20 +64,20 @@ const updateHamster = (id, data) => {
 };
 
 const deleteHamster = (id) => {
-    return fetch(`${config.api}/${id}`, {
+    return fetch(`${config.api}/hamsters/${id}`, {
             method: 'DELETE',
             ...config.options,
         })
         .then((response) => handleResponse(response))
         .then((response) => response)
         .catch((error) => {
-            console.error(error);
+            console.error('ERROR', error);
             throw Error(error);
         });
 };
 
 const getRandomHamster = () => {
-    return fetch(`${config.api}/random`, {
+    return fetch(`${config.api}/hamsters/random`, {
             method: 'GET',
             ...config.options,
         })

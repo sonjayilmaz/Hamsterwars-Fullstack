@@ -13,13 +13,9 @@ router.get('/', async (req, res) =>{
         res.send([])
         return
     }
-    let hamsters = []
-    snapshot.forEach(doc => {
-        const hamster = doc.data()
-        hamster.id = doc.id
-        hamsters.push( hamster )
-    })
-    res.send(hamsters)
+ 
+    res.send(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+    return
 });
 
 

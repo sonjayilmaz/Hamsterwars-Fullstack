@@ -1,16 +1,9 @@
 import './HamsterCard.css'
 import { useState, useEffect} from 'react';
-import Api from '../../Api';
 
 
-async function Delete(id) {
 
-    await Api.deleteHamster(id).then(data => {
-      console.log(data);
-    });
-    }
 
-    
 function HamsterCard(props){
 
     const [hamster, sethamster] = useState([]);
@@ -40,10 +33,6 @@ return (
                  Favorite food {hamster.favFood} 
                  </p>
             </div>
-            <div>
-            {props.battleMode ? "" : <button className='hamster-delete-button' onClick={async () =>
-                 await Delete(props.hamster.id)}>Delete ❌</button>}
-             </div>
         </div>
     </div>
     </div>
