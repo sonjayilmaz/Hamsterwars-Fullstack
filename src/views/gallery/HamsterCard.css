@@ -51,18 +51,18 @@
 }
 
 .hamster-info-footer p span:nth-child(1) {
-    text-shadow: 0 0 5px #B026FF;
-    color: #B026FF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, #ff12df;
+    color: #ff12df;
 }
 
 .hamster-info-footer p span:nth-child(3) {
-    text-shadow: 0 0 5px #00FF33;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, #00FF33;
     color: #00FF33;
 }
 
 .hamster-info-footer p span:nth-child(5) {
-    text-shadow: 0 0 5px #1F51FF;
-    color: #1F51FF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, #6c93fe;
+    color: #6c93fe;
 }
 
 .battle-on {

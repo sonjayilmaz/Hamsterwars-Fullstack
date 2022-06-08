@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
+  height: 100%;
   background-color: black;
   margin: 0;
   font-family: 'Press Start 2P', cursive;
@@ -9,6 +10,7 @@ body {
   background-image: url('hamsterwarsbg.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 code {

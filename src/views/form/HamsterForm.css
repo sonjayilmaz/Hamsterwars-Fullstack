@@ -1,10 +1,97 @@
+.message{
+    color: red;
+    margin-left: 0px;
+    margin-top: 10px;
+    font-size: small;
+}
+
 .form-h1{
     color: whitesmoke;
     text-align: center;
 }
 
-.form-link-container{
+.form-container{
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    }
+
+.hamster-form {
+  position: absolute;
+  top: 550px;
+  height: 650px;
+  left: 50%;
+  width: 550px;
+  padding: 70px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border: 6px solid rgb(40, 230, 255);
+    }
+
+    .hamster-name {
+        color: rgb(13, 161, 210);
+    }
+
+    .hamster-age{
+        color: rgb(143, 17, 246);
+    }
+
+    .hamster-food {
+        color: rgb(219, 246, 17);
+    }
+
+    .hamster-loves{
+        color: rgb(255, 24, 240);
+    }
+   
+    .hamster-image{
+        color: rgb(244, 131, 10); 
+    }
+   
+
+    input{
+        width: 80%;
+        border-radius: 10px; 
+        border-style: solid;
+        border-width: 3px;
+        border-color: rgb(123, 63, 0);
     }
     
+    .submitHamster {
+        width: 160px;
+        height: 45px;
+        color:white;
+        margin-left: 85px;
+        margin-top: 30px;
+        font-weight: bold;
+        background-color: #000715;
+        border-radius: 10px; 
+        border: 3px solid #40f703;
+    }
+
+    .submitHamster:hover,
+    .submitHamster:focus{
+        box-shadow: inset 0 0 0 2em var(--hover);
+        transform: translateY(-0.25em);
+        color: #002a7f;
+        background-color: #40f703;
+    }
+
+    @media only screen and (max-width: 758px) {
+        .hamster-form {
+            position: absolute;
+            height: 730px;
+            top: 604px;
+            left: 50%;
+            width: 66%;
+        }
+        .submitHamster{
+            margin-left: 0px;
+            width: 100px;
+            height: 50px;
+        }
+      }
