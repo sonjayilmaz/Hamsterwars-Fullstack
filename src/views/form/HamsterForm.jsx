@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './HamsterForm.css';
+import {toast} from 'react-toastify'
 
 const HamsterForm = () => {
   const [inputName, setInputName] = useState("");
@@ -49,9 +50,13 @@ const HamsterForm = () => {
 
   let formIsInvalid = !nameIsValid || !ageIsValid || !imgNameIsValid;
 
-  async function postHamster() {
-    setGames(wins + defeats);
+  
+  const postHamster = async (e) => {
+    e.preventDefault()
 
+    try {
+      setGames(wins + defeats);
+    
     const formData = {
       name: inputName,
       age: Number(inputAge),
@@ -64,15 +69,24 @@ const HamsterForm = () => {
     };
 
     console.log("formData: ", formData);
-
-    await fetch(`/hamsters`, {
+    
+    
+    if (inputName && inputLoves && inputFavFood && inputImgName && !isNaN(inputAge)) {
+    toast.success("Congrats! A new hamster has been added." );
+    }
+      
+    await fetch(`http://localhost:1337/hamsters`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     });
-  }
+    } catch (error) {
+      toast.error('Could not add new hamster')
+    }}
+   
+    
 
   return (
     <div>
@@ -166,7 +180,7 @@ const HamsterForm = () => {
             disabled={formIsInvalid}
           >
             {" "}
-            Add new hamster 🐹
+            Add new hamster 🐹  
           </button>
         </div>
       </div>

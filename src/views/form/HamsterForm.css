@@ -36,7 +36,7 @@
         color: rgb(13, 161, 210);
     }
 
-    .hamster-age{
+    .hamster-age {
         color: rgb(143, 17, 246);
     }
 
@@ -44,11 +44,11 @@
         color: rgb(219, 246, 17);
     }
 
-    .hamster-loves{
+    .hamster-loves {
         color: rgb(255, 24, 240);
     }
    
-    .hamster-image{
+    .hamster-image {
         color: rgb(244, 131, 10); 
     }
    
@@ -83,15 +83,24 @@
 
     @media only screen and (max-width: 758px) {
         .hamster-form {
-            position: absolute;
-            height: 730px;
+            display: block;
+            height: 650px;
             top: 604px;
-            left: 50%;
             width: 66%;
         }
         .submitHamster{
-            margin-left: 0px;
+            display: block;
+            margin-left: -3em;
             width: 100px;
             height: 50px;
+        }
+        .hamster-name,  .hamster-age, .hamster-food,  .hamster-loves, .hamster-image{
+            display: block;
+            margin-left: -4em;
+        }
+        input{
+            display: block;
+            width: 117px;
+            margin-left: -4em;
         }
       }
