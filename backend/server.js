@@ -5,6 +5,10 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 const hamsters = require('./routes/hamsters.js');
+const losers = require('./routes/losers.js');
+const matches = require('./routes/matches.js');
+const matchWinners = require('./routes/matchWinners.js');
+const winners = require('./routes/winners.js');
 
 
 
@@ -32,6 +36,12 @@ app.get('/', (req, res) =>{
 
     //rest api for /hamsters
     app.use('/hamsters', hamsters);
+    app.use('/losers', losers);
+    app.use('/matches', matches);
+    app.use('/matchWinners', matchWinners);
+    app.use('/winners', winners);
+    
+
     
     //starting the server
     app.listen(PORT, () => {

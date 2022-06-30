@@ -1,5 +1,6 @@
 import './Gallery.css'
 import {Link} from 'react-router-dom'
+import {toast} from 'react-toastify'
 import { useState, useEffect} from 'react';
 import HamsterCard from './HamsterCard.jsx';
 import Api from '../../Api.js';
@@ -19,12 +20,12 @@ import Api from '../../Api.js';
     Api.getAllHamsters().then(data => sethamsterList(data));
   }, [hamsterList]);
 
-  function Delete(id) {
+  const Delete = (id) => {
 
     Api.deleteHamster(id)
     hamsterList.splice(hamsterList.findIndex(hamster => hamster.id === id), 1);
     sethamsterList([...hamsterList]);
-    
+    toast.success("Hamster deleted from gallery")
     }
 
     
@@ -32,7 +33,13 @@ import Api from '../../Api.js';
 
    return (
     <div className='gallery-container'>
-       {hamsterList &&
+     <button className='add-hamster-button'>
+          <Link to='/form' className='add-hamster-link'>
+          <span className='text'> Add a new hamster to gallery</span>
+          </Link>
+     </button>
+<div className='hamster-gallery'>
+    {hamsterList &&
           hamsterList.map((hamster) => {
             return (
               <div key={hamster.id}>
@@ -43,33 +50,11 @@ import Api from '../../Api.js';
               </div>
             );
           })}
-    <div>
-          <Link to='/form' className='formLink'>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-            Add a new hamster
-          </Link>
-     </div>
+</div>
      </div>
   );
 }
-
-
-      
-  
   
   export default Gallery;
 
-  /*
- {
-       hamsterList.map(hamster => 
-        <li key={hamster.id}>
-        <HamsterCard battleMode={false} hamster={hamster} />,
-        <button className='hamster-delete-button' onClick={() =>
-           Delete(hamster.id)}>Delete ❌</button>
-         </li>
-       )}
-      
-  */
+ 
