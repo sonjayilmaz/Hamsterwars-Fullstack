@@ -1,81 +1,44 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import BattleCard from "./BattleCard";
+
+
+//import {toast} from 'react-toastify'
+//import Spinner from "../../components/Spinner";
 
 
 const Battle = () => {
-    const [random1, setRandom1] = useState([]);
-    const [random2, setRandom2] = useState([]);
+    const [hamsterOne, setHamsterOne] = useState([]);
 
     useEffect(() => {
         async function getRandomHamster(random) {
-            const response = await fetch('/hamsters/random', { method: 'GET' });
-            const data = await response.json();
-            random(data);
+          const response = await fetch('/hamsters/random', { method: 'GET' });
+          const data = await response.json();
+          random(data);
         }
-
-        getRandomHamster(setRandom1);
-        getRandomHamster(setRandom2);
-    }, []);
-
+    
+        getRandomHamster(setHamsterOne);
+      }, []);
+   
+   
     return (
         <main className="container-battle">
 
+                {/* Hamster nummer 1 */}
 
-            {random1 ? (
-                <div
-                    className="container1"
-                    key={random1.id}
-                >
-
-                    <img src={`img/${random1.imgName}`} alt="hamster" />
-
-
-                    <div className="description">
-                        <h2>{random1.name}</h2>
-                        <p>{random1.age} år</p>
-                        <p>Favoritmat: {random1.favFood}</p>
-                        <p>Gillar att: {random1.loves}</p>
-                    </div>
-
-
-
-                    
-
-                  
+                <div className="hamster-one">   
+                <BattleCard hamsterOne={hamsterOne}/>
                 </div>
-            ) : (
-                " API"
-            )}
+            
 
-
-
-
-
-    {/* Hamster nummer 2 */}
-
-
-            {random2 ? (
-                <div
-                    className="container2"
-                    key={random2.id}
-                >
-
-
-
-                    <img src={`img/${random2.imgName}`} alt="hamster" />
-
-                    <div className="description">
-                        <h2>{random2.name}</h2>
-                        <p>{random2.age} år</p>
-                        <p>Favoritmat: {random2.favFood}</p>
-                        <p>Gillar att: {random2.loves}</p>
-                    </div>
+                {/* Hamster nummer 2 
+                
+                <div className="hamster-two">
+                <HamsterCard hamsterTwo={hamsterTwo}/>
                 </div>
-            ) : (
-                "API"
-            )}
+                */}
         </main>
-    );
-};
+);
+    }
 
 export default Battle;
